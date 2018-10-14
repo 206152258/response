@@ -20,30 +20,27 @@ var server = http.createServer(function(request, response){
   /******** 从这里开始看，上面不要看 ************/
 
 
-cosole.log('http 路径为\n'+path)
-if(path=='/style.js'){
-response.setHeader('Cotet-Type','text/css';charset=utf-8)
-response.write('body{background-color:#ddd;}h1{color:red}')
-response.end()
-}else if(path=='/script.html'){
-response.setHeader('Contet-Type','text/javascript;charset=utf-8')
-response.write('alert("这是js执行的")')
-response.end()
-}else if(path=='/index.css'){
-response.write('Content-type','text/html;charset=utf-8')
-response.write('<!DOCTYPE>\n<html>'+
-'<head><link rel="stylesheet" href="/style.css">'+
-'</head><body>'+
-'<h2>你好</h1>'+
-'<script src="/main.js"></script>'+
-'</body></html>'
-
-
+console.log('http 路径为\n'+path)
+if(path=='/style.css'){
+  response.setHeader('Cotet-Type','text/css; charset=utf-8')
+  response.write('body{background-color:#ddd;}h1{color:red;}')
+  response.end()
+}else if(path=='/main.js'){
+  response.setHeader('Contet-Type','text/javascript;charset=utf-8')
+  response.write('alert("这是js执行的")')
+  response.end()
+}else if(path=='/'){
+  response.write('Content-type','text/html;charset=utf-8')
+  response.write('<!DOCTYPE>\n<html>'+
+   '<head><link rel="stylesheet" href="/style.css">'+
+   '</head><body>'+
+   '<h2>你好</h1>'+
+   '<script src="/main.js"></script>'+
+   '</body></html>'
 )
-response.end()
 }else{
-response.statusCode=404
-response.end()
+   response.statusCode=404
+   response.end()
 }
 
 
