@@ -32,10 +32,10 @@ response.end()
 }else if(path=='/index.css'){
 response.write('Content-type','text/html;charset=utf-8')
 response.write('<!DOCTYPE>\n<html>'+
-'<head><link rel="stylesheet" href="/main.js">'+
+'<head><link rel="stylesheet" href="/style.css">'+
 '</head><body>'+
 '<h2>你好</h1>'+
-'<script src="/style.css"></script>'+
+'<script src="/main.js"></script>'+
 '</body></html>'
 
 
